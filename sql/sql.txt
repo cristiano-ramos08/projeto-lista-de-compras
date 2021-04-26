@@ -1,0 +1,14 @@
+CREATE DATABASE lista_produtos;
+
+USE lista_produtos;
+
+CREATE TABLE `compra` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `nome` varchar(45) NOT NULL,
+    `descricao` varchar(45) NOT NULL,
+    `prioridade` varchar(45) NOT NULL,
+    `preco` decimal NOT NULL,
+    `quantidade` TINYINT NOT NULL,
+    `data_limite` date NOT NULL,
+    PRIMARY KEY (`id`)
+);

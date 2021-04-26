@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Temp\WORKSPACE_JAVA\lista-compras\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2295636063.index
+3875593202.index
+625159434.index
+4024486821.index
+3558001925.index

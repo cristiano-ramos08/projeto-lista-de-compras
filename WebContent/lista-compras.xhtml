@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+
+	<ui:composition template="/WEB-INF/_template.xhtml">
+
+		<ui:define name="conteudo">
+
+			<h:form class="form">
+
+				<fieldset>
+					<legend>Dados da compra</legend>
+
+					<p:growl id="growl" life="2000" />
+
+					<p:messages id="msgs" />
+
+					<p:inputText value="#{gerenciadorComprasBean.compra.id}" type="hidden" />
+				
+					<div class="form-div">
+						<h:outputLabel for="nome" value="Produto: " class="label" />
+						<p:inputText id="titulo" value="#{gerenciadorComprasBean.compra.nome}"  required="true" label="Nome">
+							<f:validateLength minimum="3" />
+						</p:inputText>
+					</div>
+					<!-- <h3>Descrição</h3>
+					<p:inputText value="#{gerenciadorComprasBean.compra.descricao}" />	
+				 -->
+					
+					<div class="form-div">
+						<h:outputLabel for="descricao" value="Descrição:" class="label" />
+						<p:inputTextarea id="descricao" rows="2" cols="30"
+							counter="display" maxlength="200"
+							counterTemplate="{0} caracteres restantes." autoResize="false"
+							value="#{gerenciadorComprasBean.compra.descricao}"
+							label="Descrição" />
+						<br />
+						<h:outputText id="display" />
+					</div>
+					
+					
+					
+					<div class="form-div">
+						<h:outputLabel for="prioridade" value="Prioridade:" class="label" />
+					<p:selectOneMenu id="prioridade"
+						value="#{gerenciadorComprasBean.compra.prioridade}"
+						style="width:125px">
+						<f:selectItem itemLabel="Baixa" itemValue="Baixa" />
+						<f:selectItem itemLabel="Média" itemValue="Média" />
+						<f:selectItem itemLabel="Alta" itemValue="Alta" />
+						<f:facet name="footer">
+							<p:separator />
+							<h:outputText value="3 prioridades" style="font-weight:bold;" />
+						</f:facet>
+					</p:selectOneMenu>
+					</div>
+				
+					
+					<div class="form-div">
+						<h:outputLabel for="preco" value="Preco: " class="label" />
+						<p:inputText id="preco"
+							value="#{gerenciadorComprasBean.compra.preco}" label="Preco">
+						</p:inputText>
+					</div>
+					
+
+					<div class="form-div">
+						<h:outputLabel for="quantidade" value="Quantidade: " class="label" />
+						<p:inputText id="quantidade"
+							value="#{gerenciadorComprasBean.compra.quantidade}" label="Quantidade">
+						</p:inputText>
+					</div>
+					
+					<div>
+					<h:outputLabel for="data-limite" value="Data Limite:" class="label" />
+						<p:calendar id="button" value="#{gerenciadorComprasBean.compra.dataLimite}" required="true" showOn="button" />
+					</div>
+					<br />
+
+					<p:commandButton value="Salvar" id="salvarBotão" update="@all"
+						action="#{gerenciadorComprasBean.salvarCompra}"
+						style="margin-right:20px;" styleClass="ui-priority-primary" />
+
+
+				</fieldset>
+
+				<h2>Lista de produtos</h2>
+				<h:dataTable value="#{gerenciadorComprasBean.compras}" var="compra"
+					id="compras">
+					<h:column>
+						<f:facet name="header">ID</f:facet>
+							#{compra.id}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Nome</f:facet>
+							#{compra.nome}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Descrição</f:facet>
+							#{compra.descricao}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Prioridade</f:facet>
+							#{compra.prioridade}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Preço</f:facet>
+
+						<h:outputText value="#{compra.preco}">
+							<f:convertNumber type="currency" />
+						</h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Quantidade</f:facet>
+							#{compra.quantidade}
+					</h:column>
+					<h:column>
+						<f:facet name="header">Data Limite</f:facet>
+
+
+						<h:outputText value="#{compra.dataLimite}">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+						</h:outputText>
+					</h:column>
+
+					<h:column>
+						<p:commandLink id="apagar" update="@all"
+							action="#{gerenciadorComprasBean.apagarCompra(compra)}"
+							style="margin-right:20px;" immediate="true">
+							<h:outputText value="Apagar" />
+						</p:commandLink>
+					</h:column> 
+
+
+					<h:column>
+						<p:commandLink id="Editar" update="@all"
+							action="#{gerenciadorComprasBean.editarCompra(compra)}"
+							style="margin-right:20px;" process="@this">
+							<h:outputText value="Editar" />
+						</p:commandLink>
+					</h:column>
+				</h:dataTable>
+			</h:form>
+			
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

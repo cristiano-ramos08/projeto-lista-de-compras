@@ -1,0 +1,147 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.form .form-div {
+	margin: 10px 0px;
+}
+
+.form .label {
+	display: block;
+	font-weight: bold;
+}
+
+.header {
+	background-image: url(#{request.contextPath}/resources/img/logo.jpg);
+	background-position: top 0px right 20px;
+	background-repeat: no-repeat;
+	background-size: 150px 150px;
+	height: 150px;
+	margin-top: 0px;
+}
+
+header .titulo {
+	margin-left: auto;
+	margin-right: auto;
+	width: 426px;
+	margin-top: 0px;
+	padding-top: 55px;
+	font-family: 'Orbitron', sans-serif;
+	font-family: 'Metal Mania', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
+a:hover {
+	color: #4682B4;
+}
+
+a:active {
+	color: #4682B4;
+}
+
+fieldset {
+	border: 1px solid #C0C0C0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #C0C0C0;
+}
+
+th, td {
+	text-align: left;
+	padding: 16px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.container {
+	background-image:
+		url(#{request.contextPath}/resources/img/fundo-binario.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-top: 0px;
+	background-color: hsla(0, 0%, 100%, 0.91);
+	background-blend-mode: overlay;
+	height: 475px;
+}
+
+.eu {
+	float: left;
+	margin: 10px 30px 0px 80px;
+}
+
+.eu img {
+	border-radius: 20px;
+	border: 1px solid #000;
+	width: 350px;
+}
+
+.dados-sobre-mim {
+	margin: 10px 0px;
+	padding: 30px 10px;
+}
+
+.dados-sobre-mim .titulo {
+	font-weight: bold;
+}
+
+.menu {
+	border-bottom: 2px solid #959393;
+	height: 49px;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.menu ul li {
+	float: left;
+	position: relative;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #959393;
+}
+
+.menu ul li a {
+	display: block;
+	text-decoration: none;
+	padding: 12px 0;
+	margin-right: 10px;
+	border-bottom: 4px solid #fff;
+}
+
+.menu ul li a:link {
+	color: #fff;
+}
+
+.menu ul li a:visited {
+	color: #fff;
+}
+
+.menu ul li a:hover {
+	color: #e4e2e2;
+}
+
+.menu ul li a:active {
+	color: #fff;
+}

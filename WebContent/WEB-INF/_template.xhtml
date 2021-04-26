@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Lista de Compras</title>
+
+	<h:outputStylesheet library="css" name="styles.css" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,300" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Metal+Mania" rel="stylesheet"/>
+ </h:head>
+
+<h:body>
+
+	<header class="header">
+		<h1 class="titulo">Gerenciador de Produtos</h1>
+	 </header>
+	
+	<div class="menu">
+		<ul>
+			<li><p:link outcome="lista-compras" value="compras"/></li>
+			<li><p:link outcome="sobre" value="Sobre"/></li>
+			<li><p:link outcome="lista-compras" value="Link Fake 1"/></li>
+			<li><p:link outcome="lista-compras" value="Link Fake 2"/></li>
+			<li><p:link outcome="lista-compras" value="Link Fake 3"/></li>
+			<li><p:link outcome="lista-compras" value="Link Fake 4"/></li>
+		</ul>
+	</div> 
+	
+	<div>
+		<ui:insert name="conteudo" />
+	</div>
+
+</h:body>
+</html>
